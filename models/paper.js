@@ -31,6 +31,10 @@ const paperSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  paperyear: {
+    type: Number,
+    required: true
   }
 });
 

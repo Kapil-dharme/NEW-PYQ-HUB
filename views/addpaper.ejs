@@ -11,9 +11,9 @@
 
 <body>
     <%- include("./partials/navbar") %>
-    <%- include("./partials/loader") %>
-    <%- include("./partials/error") %>
-    <%- include("./partials/success") %>
+        <%- include("./partials/loader") %>
+            <%- include("./partials/error") %>
+                <%- include("./partials/success") %>
 
                     <div class="bg-gray-50 font-sans text-gray-800">
 
@@ -165,12 +165,32 @@
                                                     class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder-gray-400">
                                             </div>
                                         </div>
-
                                         <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Paper
+                                                Year</label>
+                                            <div class="relative group">
+                                                <div
+                                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor"
+                                                        class="bi bi-book text-xl text-gray-400 group-focus-within:text-indigo-500 transition-colors"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                                                    </svg>
+                                                </div>
+                                                <input type="number" placeholder="e.g. 2026 " required
+                                                    autocomplete="off" name="paperyear"
+                                                    class="w-full pl-10 pr-4 py-3 bg-gray-50  border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all placeholder-gray-400">
+                                            </div>
+                                        </div>
+
+                                        <div class="md:col-span-2 flex flex-col items-center">
                                             <label class="block text-sm font-semibold text-gray-700 mb-2">Exam
                                                 Type</label>
                                             <input type="hidden" name="examtype" id="examTypeInput" value="EndSem">
-                                            <div class="flex bg-gray-100 p-1 rounded-xl">
+                                            <div class="flex bg-gray-100 p-1 rounded-xl w-72">
                                                 <button type="button" onclick="selectType('Ct')" id="btn-Ct"
                                                     class="flex-1 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 transition-all">
                                                     Mid Sem (CT)

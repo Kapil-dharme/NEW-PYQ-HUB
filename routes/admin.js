@@ -79,9 +79,9 @@ router.post("/add-paper", isAdmin, (req, res, next) => {
             return res.render("addpaper", { error: "Please select a PDF file to upload" });
         }
 
-        let { year, subject, branch, examtype } = req.body;
+        let { year, subject, branch, examtype,paperyear } = req.body;
 
-        if (!year || !branch || !subject || !examtype) {
+        if (!year || !branch || !subject || !examtype || !paperyear) {
             if (req.file && req.file.filename) {
                 await cloudinary.uploader.destroy(req.file.filename);
             }
@@ -102,6 +102,7 @@ router.post("/add-paper", isAdmin, (req, res, next) => {
             branch,
             subject,
             examtype,
+            paperyear:Number(paperyear),
             fileUrl: req.file.path,
             publicId: req.file.filename,
         });
