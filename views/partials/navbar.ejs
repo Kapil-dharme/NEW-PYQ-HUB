@@ -1,0 +1,222 @@
+<nav class="bg-[#1A1A1B] text-white sticky top-0 z-50 shadow-lg">
+  <div class="w-full mx-auto sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+
+      <div class="flex items-center cursor-pointer">
+        <% if (locals.admin) { %>
+          <a href="/">
+            <img src="/logo2.png" alt="Pyq-Hub" class="h-12" />
+          </a>
+          <% } else { %>
+            <a href="/">
+              <img src="/logo1.png" alt="Pyq-Hub" class="h-12" />
+            </a>
+            <% } %>
+
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/" class="relative hover:text-blue-400 transition-colors px-3 py-2 text-base font-bold group ">
+          Home
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CBA449] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="/about" class="relative hover:text-blue-400 transition-colors px-3 py-2 text-base font-bold group">
+          About & FeedBack
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CBA449] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+
+      
+        <% if (locals.admin) { %>
+          <div class="relative group">
+        
+            <div class="relative" tabindex="0">
+              <button
+                class="relative text-xs font-bold flex flex-col items-center hover:text-blue-400 cursor-pointer group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                  class="bi bi-person-circle mb-1" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                  <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                <%= admin.name %> ▼
+                  <span
+                    class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CBA449] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </button>
+
+           
+              <div
+                class="invisible opacity-0 group-focus-within:visible group-focus-within:opacity-100 absolute right-0 mt-2 w-56 bg-[#2A2A2B] rounded-lg shadow-xl border border-gray-700 overflow-hidden z-50 transition-all duration-200">
+
+           
+                <a href="/admin/show-paper"
+                  class="block px-4 py-3 text-sm font-medium hover:bg-[#3A3A3B] hover:text-[#CBA449] transition-colors border-b border-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="inline mr-2 mb-1" viewBox="0 0 16 16">
+                    <path
+                      d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z" />
+                    <path
+                      d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+                  </svg>
+                  Show All Paper
+                </a>
+
+     
+                <a href="/admin/add-paper"
+                  class="block px-4 py-3 text-sm font-medium hover:bg-[#3A3A3B] hover:text-[#CBA449] transition-colors border-b border-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="inline mr-2 mb-1" viewBox="0 0 16 16">
+                    <path
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                    <path
+                      d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+                  </svg>
+                  Add Paper
+                </a>
+
+            
+                <div class="border-t-2 border-gray-600"></div>
+
+               
+                <a href="/admin/logout"
+                  class="block px-4 py-3 text-sm font-medium hover:bg-red-600 hover:text-white transition-colors text-red-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="inline mr-2 mb-1" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                  </svg>
+                  Logout
+                </a>
+              </div>
+            </div>
+          </div>
+          <% } else { %>
+            <a href="/admin/login"
+              class="relative text-xs font-bold flex flex-col items-center hover:text-blue-400 cursor-pointer group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                class="bi bi-person-circle mb-1" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+              </svg>
+              Admin
+              <span
+                class="absolute bottom-0 left-0 w-full h-0.5 bg-[#CBA449] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a>
+            <% } %>
+      </div>
+
+      <div class="flex items-center md:hidden pr-4">
+        <button id="mobile-menu-btn" type="button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1A1A1B] border-t border-gray-800">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block px-3 py-2 rounded-md text-base font-bold hover:text-blue-400">
+        Home
+      </a>
+      <a href="/about" class="block px-3 py-2 rounded-md text-base font-bold hover:text-blue-400">
+        About Us
+      </a>
+      <% if (locals.admin) { %>
+        <div class="border-t border-gray-700 pt-2 mt-2">
+          <button id="mobile-admin-dropdown-btn"
+            class="w-full text-left px-3 py-2 rounded-md text-base font-bold hover:text-blue-400 flex items-center justify-between">
+            <span>
+              <%= admin.name %>
+            </span>
+            <svg id="mobile-dropdown-icon" class="w-4 h-4 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div id="mobile-admin-dropdown" class="hidden pl-4 space-y-1 mt-1">
+            <a href="/admin/show-paper"
+              class="block px-3 py-2 rounded-md text-sm font-medium hover:text-[#CBA449] hover:bg-[#2A2A2B]">
+              📄 Show All Paper
+            </a>
+            <a href="/admin/add-paper"
+              class="block px-3 py-2 rounded-md text-sm font-medium hover:text-[#CBA449] hover:bg-[#2A2A2B]">
+              ➕ Add Paper
+            </a>
+            <div class="border-t border-gray-600 my-2"></div>
+            <a href="/admin/logout"
+              class="block px-3 py-2 rounded-md text-sm font-medium text-red-400 hover:text-red-300 hover:bg-[#2A2A2B]">
+              🚪 Logout
+            </a>
+          </div>
+        </div>
+        <% } else { %>
+          <a href="/admin/login" class="block px-3 py-2 rounded-md text-base font-bold hover:text-blue-400">
+            Admin
+          </a>
+          <% } %>
+    </div>
+  </div>
+</nav>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+
+    
+    const mobileAdminBtn = document.getElementById('mobile-admin-dropdown-btn');
+    const mobileAdminMenu = document.getElementById('mobile-admin-dropdown');
+    const mobileDropdownIcon = document.getElementById('mobile-dropdown-icon');
+
+    if (mobileAdminBtn && mobileAdminMenu && mobileDropdownIcon) {
+      mobileAdminBtn.addEventListener('click', () => {
+        mobileAdminMenu.classList.toggle('hidden');
+        mobileDropdownIcon.classList.toggle('rotate-180');
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const currentPath = window.location.pathname;
+
+  
+    const navLinks = document.querySelectorAll('nav a[href]');
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+
+      if (currentPath === href) {
+
+        link.classList.add('text-teal-500');
+        link.classList.remove('hover:text-blue-400');
+
+      
+        const underline = link.querySelector('span');
+        if (underline) {
+          underline.remove();
+        }
+      }
+    });
+  });
+</script>

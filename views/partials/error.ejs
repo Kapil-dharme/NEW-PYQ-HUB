@@ -1,0 +1,68 @@
+<% if (locals.error) { %>
+<div id="pyq-error"
+    class="fixed top-18 right-2 z-50 bg-white rounded-xl shadow-xl border-2 border-red-200 overflow-hidden transform transition-all duration-300"
+    role="alert" style="animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)">
+
+    <!-- Header with icon -->
+    <div class="bg-gradient-to-r from-red-50 to-red-100 px-4 py-3 border-b border-red-200 flex items-center">
+        <div class="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center shadow-sm">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <p class="ml-3 text-sm font-bold text-red-900">Request Failed</p>
+        <button onclick="removeAlert('pyq-error')"
+            class="ml-auto text-red-400 hover:text-red-600 focus:outline-none transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Content -->
+    <div class="px-4 py-3">
+        <p class="text-sm text-gray-700">
+            <%= locals.error %>
+        </p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="h-1 bg-red-500 pyq-progress"></div>
+</div>
+
+<style>
+    @keyframes popIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.8) translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes progressShrink {
+        from { width: 100%; }
+        to { width: 0%; }
+    }
+
+    .pyq-progress {
+        animation: progressShrink 5s linear forwards;
+    }
+</style>
+
+<script>
+    function removeAlert(id) {
+        const alert = document.getElementById(id);
+        if (alert) {
+            alert.style.animation = 'fadeOut 0.3s ease-out';
+            setTimeout(() => alert.remove(), 300);
+        }
+    }
+
+    setTimeout(() => removeAlert('pyq-error'), 2500);
+</script>
+<% } %>

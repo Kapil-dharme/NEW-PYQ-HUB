@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./partials/head") %>
+        <title>Document</title>
+</head>
+
+<body>
+    <%- include("./partials/navbar") %>
+    <%- include("./partials/loader") %>
+    <%- include("./partials/error") %>
+    <%- include("./partials/success") %>
+                    <div class="min-h-screen flex flex-col justify-center py-12 px-6 lg:px-8">
+
+                        <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-3xl shadow-xl border border-slate-100 mb-6">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                    class="bi bi-person-fill-lock text-indigo-600" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                                </svg>
+                            </div>
+
+                            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+                                Admin Access
+                            </h2>
+                            <p class="mt-2 text-sm text-slate-500">
+                                Sign in to manage papers.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+                            <div
+                                class="bg- py-10 px-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[2.5rem] border border-slate-100">
+
+                                <form class="space-y-6" action="/admin/login" method="post" autocomplete="off">
+                                    <div>
+                                        <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Admin
+                                            Email</label>
+                                        <div class="relative group">
+                                            <span
+                                                class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 group-focus-within:text-indigo-600 transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z" />
+                                                </svg>
+                                            </span>
+                                            <input required name="email"
+                                                class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all sm:text-sm"
+                                                placeholder="admin@pyqhub.com">
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Password</label>
+                                        <div class="relative group">
+                                            <span
+                                                class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 group-focus-within:text-indigo-600 transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3" />
+                                                </svg>
+                                            </span>
+                                            <input required name="password" type="password"
+                                                class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all sm:text-sm"
+                                                placeholder="••••••••">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-end justify-between text-sm ml-[65%]">
+                                        <a href="/"
+                                            class="font-medium text-indigo-600 hover:text-indigo-500  transition-colors">Forgot
+                                            password?</a>
+                                    </div>
+
+                                    <button type="submit"
+                                        class="w-full flex justify-center py-4 px-4 border border-transparent rounded-2xl shadow-lg text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:shadow-indigo-500/30 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Sign In
+                                    </button>
+                                </form>
+
+                                <div class="mt-8 pt-6 border-t border-slate-100">
+                                    <a href="/"
+                                        class="flex items-center justify-center text-sm font-medium text-slate-400 hover:text-slate-800 transition-colors group">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="bi bi-arrow-left mr-1 group-hover:-translate-x-1 transition-transform"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                        </svg>
+                                        Back to Home
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- include("./partials/footer") %>
+                        <script>
+                            document.querySelector('form').addEventListener('submit', function () {
+                                showLoader();
+                            });
+                        </script>
+</body>
+
+</html>

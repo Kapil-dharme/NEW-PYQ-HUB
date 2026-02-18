@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./partials/head") %>
+
+        <title>Find Your Papers</title>
+</head>
+
+<body class="min-h-screen bg-white">
+
+    <!-- Navbar -->
+    <%- include("./partials/navbar") %>
+    <%- include("./partials/loader") %>
+    <%- include("./partials/error") %>
+    <%- include("./partials/success") %>
+
+                <!-- Main Content -->
+                <div class="flex items-center justify-center p-6 min-h-[calc(100vh-4rem)]">
+                    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+                        <div class="p-6 pb-0">
+                            <a href="/"
+                                class="inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-300 hover:border-indigo-500 text-gray-700 hover:text-indigo-600 font-semibold rounded-lg transition-all group">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    class="transition-transform group-hover:-translate-x-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                                </svg>
+                                Back
+                            </a>
+                        </div>
+                        <div class="max-w-2xl mx-auto  relative z-10">
+
+                            <div class="text-center mb-10">
+                                <div class="flex justify-center items-center mb-4">
+                                    <div
+                                        class="bg-gradient-to-br from-purple-100 to-indigo-100 p-3 rounded-full mr-3 shadow-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                            fill="currentColor" class="text-purple-600" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z" />
+                                            <path
+                                                d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h2 class="text-4xl font-extrabold text-gray-900 mb-3">
+                                    Find Your
+                                    <span
+                                        class="bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">Papers</span>
+                                </h2>
+                                <div class="flex items-center justify-center gap-2 mb-4">
+                                    <div class="h-1 w-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full">
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="text-purple-600" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path
+                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                    </svg>
+                                    <div class="h-1 w-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full">
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-lg font-medium">Select your details to get started</p>
+                                <p class="text-gray-500 text-sm mt-1">Access previous year papers quickly and easily</p>
+                            </div>
+                        </div>
+
+                        <form class="p-6 space-y-5" method="post" action="/user/browse">
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Year</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="bi bi-mortarboard text-xl text-gray-400 group-focus-within:text-indigo-500 transition-colors"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z" />
+                                            <path
+                                                d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z" />
+                                        </svg>
+                                    </div>
+                                    <select required id="yearSelect" name="year" onchange="handleYearChange()"
+                                        class="w-full pl-10 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all appearance-none cursor-pointer">
+                                        <option disabled selected>Select Year</option>
+                                        <option>First Year (FY)</option>
+                                        <option>Second Year (SY)</option>
+                                        <option>Third Year (TY)</option>
+                                        <option>Final Year</option>
+                                    </select>
+                                    <div
+                                        class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Branch</label>
+                                <div class="relative" id="branchContainer">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor"
+                                            class="bi bi-backpack4 text-xl text-gray-400 group-focus-within:text-indigo-500 transition-colors"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z" />
+                                            <path
+                                                d="M8 0a2 2 0 0 0-2 2H3.5a2 2 0 0 0-2 2v1c0 .52.198.993.523 1.349A.5.5 0 0 0 2 6.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6.5a.5.5 0 0 0-.023-.151c.325-.356.523-.83.523-1.349V4a2 2 0 0 0-2-2H10a2 2 0 0 0-2-2m0 1a1 1 0 0 0-1 1h2a1 1 0 0 0-1-1M3 14V6.937q.24.062.5.063h4v.5a.5.5 0 0 0 1 0V7h4q.26 0 .5-.063V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1m9.5-11a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                                        </svg>
+                                    </div>
+                                    <select required id="branchSelect" name="branch"
+                                        class="w-full pl-10 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all appearance-none cursor-pointer">
+                                        <option disabled selected>Select Branch</option>
+                                        <option value="cse">Computer Science & Engineering</option>
+                                        <option value="it">Information Technology</option>
+                                        <option value="entc">Electronics & Telecommunication</option>
+                                        <option value="electrical">Electrical Engineering</option>
+                                        <option value="mechanical">Mechanical Engineering</option>
+                                        <option value="change">Civil Engineering</option>
+                                        <option value="instrumentation">Instrumentation</option>
+                                    </select>
+                                    <div id="chevronIcon"
+                                        class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Lock icon (hidden by default) -->
+                                    <div id="lockIcon"
+                                        class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400 hidden">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
+                                        </svg>
+                                    </div>
+                                    <div
+                                        class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Exam Type</label>
+                                <input type="hidden" name="examtype" id="examTypeInput" value="endsem">
+                                <div class="flex bg-gray-100 p-1 rounded-xl">
+                                    <button type="button" onclick="selectType('Ct')" id="btn-Ct"
+                                        class="flex-1 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-gray-900 transition-all">
+                                        Mid Sem (CT)
+                                    </button>
+                                    <button type="button" onclick="selectType('EndSem')" id="btn-end"
+                                        class="flex-1 py-2 rounded-lg text-sm font-bold text-indigo-700 bg-white shadow-sm ring-1 ring-black/5 transition-all">
+                                        End Sem
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="text-gray-400" viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.11-2.278-.037-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                                        </svg>
+                                    </div>
+                                    <select name="subject" id="subjectSelect"
+                                        class="w-full pl-10 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                                        disabled>
+                                        <option disabled selected>Select Year & Branch first</option>
+                                    </select>
+                                    <div
+                                        class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+
+                                <p id="subjectStatus" class="text-xs text-gray-400 mt-1 hidden"></p>
+                            </div>
+
+                            <div>
+                                <button type="submit"
+                                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg shadow-lg shadow-indigo-200 transition transform active:scale-95">
+                                    Show Papers
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <script>
+                    // ─── Exam Type Toggle ───────────────────────────────────────────
+                    function selectType(type) {
+                        const btnCt = document.getElementById('btn-Ct');
+                        const btnEnd = document.getElementById('btn-end');
+                        const examTypeInput = document.getElementById('examTypeInput');
+                        const active = "flex-1 py-2 rounded-lg text-sm transition-all bg-white shadow-sm ring-1 ring-black/5 text-indigo-700 font-bold";
+                        const inactive = "flex-1 py-2 rounded-lg text-sm transition-all text-gray-600 hover:text-gray-900 font-medium";
+                        btnCt.className = type === 'Ct' ? active : inactive;
+                        btnEnd.className = type === 'EndSem' ? active : inactive;
+                        examTypeInput.value = type === 'Ct' ? 'midsem' : 'endsem';
+                    }
+
+                    // ─── Year Change ─────────────────────────────────────────────────
+                    function handleYearChange() {
+                        const yearSelect = document.getElementById('yearSelect');
+                        const branchSelect = document.getElementById('branchSelect');
+                        const chevronIcon = document.getElementById('chevronIcon');
+                        const lockIcon = document.getElementById('lockIcon');
+
+                        if (yearSelect.value === 'First Year (FY)') {
+                            let naOption = branchSelect.querySelector('option[value="NA"]');
+                            if (!naOption) {
+                                naOption = document.createElement('option');
+                                naOption.value = 'NA';
+                                naOption.textContent = 'N/A';
+                                branchSelect.insertBefore(naOption, branchSelect.options[1]);
+                            }
+                            branchSelect.value = 'NA';
+                            branchSelect.disabled = true;
+                            branchSelect.classList.add('bg-gray-200', 'cursor-not-allowed', 'opacity-60');
+                            chevronIcon.classList.add('hidden');
+                            lockIcon.classList.remove('hidden');
+                        } else {
+                            const naOption = branchSelect.querySelector('option[value="NA"]');
+                            if (naOption) naOption.remove();
+                            branchSelect.disabled = false;
+                            branchSelect.selectedIndex = 0;
+                            branchSelect.classList.remove('bg-gray-200', 'cursor-not-allowed', 'opacity-60');
+                            chevronIcon.classList.remove('hidden');
+                            lockIcon.classList.add('hidden');
+                        }
+
+                        fetchSubjects(); 
+                    }
+
+                    // ─── Fetch Subjects ──────────────────────────────────────────────
+                    async function fetchSubjects() {
+                        const year = document.getElementById('yearSelect').value;
+                        const branch = document.getElementById('branchSelect').value;
+                        const subjectSelect = document.getElementById('subjectSelect');
+                        const status = document.getElementById('subjectStatus');
+
+                        // Reset subject dropdown
+                        subjectSelect.innerHTML = '<option disabled selected>Select Subject</option>';
+                        subjectSelect.disabled = true;
+
+                        const invalidValues = ['Select Year', 'Select Branch', '', undefined];
+                        if (invalidValues.includes(year) || invalidValues.includes(branch)) return;
+
+
+                        status.textContent = '⏳ Loading subjects...';
+                        status.classList.remove('hidden', 'text-red-400');
+                        status.classList.add('text-gray-400');
+
+                        try {
+                            const res = await fetch(`/user/browse?year=${encodeURIComponent(year)}&branch=${encodeURIComponent(branch)}`);
+                            const subjects = await res.json();
+
+                            if (!subjects.length) {
+                                status.textContent = '⚠️ No subjects found for this selection.';
+                                status.classList.add('text-red-400');
+                                return;
+                            }
+
+
+                            subjects.forEach(sub => {
+                                const opt = document.createElement('option');
+                                opt.value = sub.subject;
+                                opt.textContent = sub.subject;
+                                subjectSelect.appendChild(opt);
+                            });
+
+                            subjectSelect.disabled = false;
+                            status.classList.add('hidden');
+
+                        } catch (err) {
+                            status.textContent = '❌ Failed to load subjects. Try again.';
+                            status.classList.add('text-red-400');
+                        }
+                    }
+
+
+                    document.getElementById('branchSelect').addEventListener('change', fetchSubjects);
+
+
+                    document.querySelector('form').addEventListener('submit', function () {
+                        document.getElementById('branchSelect').disabled = false;
+                        document.getElementById('subjectSelect').disabled = false;
+                        showLoader();
+                    });
+
+
+                    // ─── Restore state on back navigation ─────────────────────────
+                    window.addEventListener('pageshow', function () {
+                        const yearSelect = document.getElementById('yearSelect');
+                        if (yearSelect.value && yearSelect.value !== 'Select Year') {
+                            handleYearChange();
+                        }
+                    });
+                </script>
+</body>
+
+</html>

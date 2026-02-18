@@ -1,0 +1,19 @@
+<footer class="bg-[#1a1a1b] border-t border-gray-800 mt-auto">
+    <div
+        class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-gray-500 text-sm flex flex-col md:flex-row items-center gap-2 md:gap-4"> <% if (locals.admin) { %>
+          <a href="/">
+            <img src="/logo2.png" alt="Pyq-Hub" class="h-12" />
+          </a>
+          <% } else { %>
+            <a href="/">
+              <img src="/logo1.png" alt="Pyq-Hub" class="h-12" />
+            </a>
+            <% } %><span
+                class="hidden md:inline-block w-1 h-1 bg-gray-600 rounded-full"></span><span>© 2026 PYQ Hub</span></div>
+        <nav class="flex gap-6 text-sm text-gray-400"><a 
+                class="hover:text-[#D4AF37] transition-colors duration-200">Privacy</a><a 
+                class="hover:text-[#D4AF37] transition-colors duration-200">Terms</a><a href="/about"
+                class="hover:text-[#D4AF37] transition-colors duration-200">About &amp; FeedBack</a></nav>
+    </div>
+</footer>

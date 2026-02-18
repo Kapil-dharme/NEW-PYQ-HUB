@@ -1,0 +1,17 @@
+<!-- Page Loader -->
+<div id="pageLoader"
+    class="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center hidden">
+    <div class="w-12 h-12 rounded-full border-4 border-indigo-100 border-t-indigo-600 animate-spin mb-4"></div>
+    <p class="text-sm font-semibold text-indigo-600 tracking-widest uppercase">Loading...</p>
+</div>
+
+
+<script>
+    function showLoader() {
+        document.getElementById('pageLoader').classList.remove('hidden');
+    }
+
+    function hideLoader() {
+        document.getElementById('pageLoader').classList.add('hidden');
+    }
+</script>
