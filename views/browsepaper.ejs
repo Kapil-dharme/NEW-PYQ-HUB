@@ -160,13 +160,15 @@
                                                             class="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
                                                             Subject : <%= paper.subject %>
                                                         </span>
-                                                        <span
-                                                            class="text-xs font-semibold text-purple-500 bg-purple-50 px-2 py-0.5 rounded-md">
-                                                            Branch : <%= ({ cse: 'CSE' , it: 'IT' , entc: 'ENTC' ,
-                                                                electrical: 'Electrical' , mechanical: 'Mechanical' ,
-                                                                civil: 'Civil' , instrumentation: 'Instrumentation' ,
-                                                                na: 'N/A' })[paper.branch] || paper.branch %>
-                                                        </span>
+                                                        <% if (locals.admin) { %>
+                                                            <span
+                                                                class="text-xs font-semibold text-purple-500 bg-purple-50 px-2 py-0.5 rounded-md">
+                                                                Branch : <%= ({ cse: 'CSE' , it: 'IT' , entc: 'ENTC' ,
+                                                                    electrical: 'Electrical' , mechanical: 'Mech' ,
+                                                                    civil: 'Civil' , instrumentation: 'Instru' ,
+                                                                    na: 'N/A' })[paper.branch] || paper.branch %>
+                                                            </span>
+                                                            <% } %>
                                                     </h3>
 
                                                     <div class="flex justify-between items-center mb-6">
