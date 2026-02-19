@@ -290,8 +290,8 @@
 
                             subjects.forEach(sub => {
                                 const opt = document.createElement('option');
-                                opt.value = sub.subject;
-                                opt.textContent = sub.subject;
+                                opt.value = sub.subject.toUpperCase();
+                                opt.textContent = sub.subject.toUpperCase();
                                 subjectSelect.appendChild(opt);
                             });
 
