@@ -1,25 +1,25 @@
-# 📚 PYQ-HUB
+# PYQ-HUB
 
 An accessible, lightning-fast, and student-friendly platform designed to help college students easily find, view, and download Previous Year Question (PYQ) papers. 
 
-**🚀 Live Website:** [https://pyq-hub-alpha.vercel.app/](https://pyq-hub-alpha.vercel.app/)
+**Live Website:** [https://pyq-hub-alpha.vercel.app/](https://pyq-hub-alpha.vercel.app/)
 
 ---
 
-## 📖 About the Project
+## About the Project
 
 Exam season is stressful enough without having to hunt down old question papers in endless WhatsApp groups. We built **PYQ-HUB** to solve a real problem for our college community. Our goal is simple: create the fastest, cleanest, and most reliable archive of college papers. 
 
 We kept the site completely distraction-free—that means no ads, no countdown timers, and instant PDF access without even needing to log in.
 
-## 💻 Tech Stack
+## Tech Stack
 
-**🎨 Frontend:**`EJS`, `Tailwind CSS`, `JavaScript`  
-**⚙️ Backend:** `Node.js`, `Express.js`  
-**🗄️ Database & Storage:** `MongoDB`, `Cloudinary`
+** Frontend:**`EJS`, `Tailwind CSS`, `JavaScript`  
+** Backend:** `Node.js`, `Express.js`  
+** Database & Storage:** `MongoDB`, `Cloudinary`
 
 
-## ✨ Key Features
+## Key Features
 
 * **Easy Filtering:** Quickly find specific papers by selecting your Academic Year, Branch, Subject, and Exam Type (Mid Sem/End Sem).
 * **Instant Viewing:** Click and get your PDF instantly right in the browser.
@@ -29,23 +29,23 @@ We kept the site completely distraction-free—that means no ads, no countdown t
 
 ---
 
-## 🧭 Usage Guide
+## Usage Guide
 
-* **🎓 For Students:** Click on Browse Paper ➔ Search with your year, branch & subject ➔ Click View paper on card ➔ Instantly view the PDF (No login required).
-* **🔐 For Admins:** Navigate to `/admin/login` to access Dashboard ➔ Fill out the paper metadata ➔ Upload the PDF directly to Cloudinary.
+* ** For Students:** Click on Browse Paper ➔ Search with your year, branch & subject ➔ Click View paper on card ➔ Instantly view the PDF (No login required).
+* ** For Admins:** Navigate to `/admin/login` to access Dashboard ➔ Fill out the paper metadata ➔ Upload the PDF directly to Cloudinary.
 
 ---
 
-## 🏗️ Architecture & Contributions
+## Architecture & Contributions
 
 This project was built collaboratively, with clear roles for frontend and backend development
 
-**🎨 Frontend Development (*Om Lanjewar*)**
+** Frontend Development (*Om Lanjewar*)**
 * **Modular UI:** Used EJS partials to build reusable components, keeping the codebase clean and DRY
 * **Mobile-First Design:** Built a fully responsive, mobile-first UI using Tailwind CSS.
 * **GitHub:** [@omLanjewar16](https://github.com/omLanjewar16)
 
-**⚙️ Backend Infrastructure (*Kapil Dharme*)**
+** Backend Infrastructure (*Kapil Dharme*)**
 * **Optimized Queries:** Designed database schemas using MongoDB for instant search filtering.
 * **Cloud Integration:** Integrated Cloudinary for fast, secure PDF hosting and delivery.
 * **GitHub:** [@Kapil-dharme](https://github.com/Kapil-dharme)
@@ -53,7 +53,7 @@ This project was built collaboratively, with clear roles for frontend and backen
 ---
 
 <details>
-<summary><b>🔑 Core API Routes</b></summary>
+<summary><b> Core API Routes</b></summary>
 
 <br>
 Here are the main API endpoints used in our Website:
@@ -77,7 +77,7 @@ Here are the main API endpoints used in our Website:
 ---
 
 <details>
-<summary><b>💻 Local Setup Instructions</b></summary>
+<summary><b> Local Setup Instructions</b></summary>
 
 <br>
 If you want to run this project on your local machine, follow these steps:
