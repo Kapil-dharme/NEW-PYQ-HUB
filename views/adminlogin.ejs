@@ -10,9 +10,9 @@
 
 <body>
     <%- include("./partials/navbar") %>
-    <%- include("./partials/loader") %>
-    <%- include("./partials/error") %>
-    <%- include("./partials/success") %>
+        <%- include("./partials/loader") %>
+            <%- include("./partials/error") %>
+                <%- include("./partials/success") %>
                     <div class="min-h-screen flex flex-col justify-center py-12 px-6 lg:px-8">
 
                         <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
@@ -20,7 +20,7 @@
                                 class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-3xl shadow-xl border border-slate-100 mb-6">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                    class="bi bi-person-fill-lock text-indigo-600" viewBox="0 0 16 16">
+                                    class="bi bi-person-fill-lock text-black-600" viewBox="0 0 16 16">
                                     <path
                                         d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
                                 </svg>
@@ -76,12 +76,11 @@
 
                                     <div class="flex items-end justify-between text-sm ml-[65%]">
                                         <a href="/"
-                                            class="font-medium text-indigo-600 hover:text-indigo-500  transition-colors">Forgot
+                                            class="font-medium text-black-600 hover:text-black-500  transition-colors">Forgot
                                             password?</a>
                                     </div>
-
                                     <button type="submit"
-                                        class="w-full flex justify-center py-4 px-4 border border-transparent rounded-2xl shadow-lg text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:shadow-indigo-500/30 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        class="w-full flex justify-center py-4 px-4 rounded-2xl shadow-md text-sm font-semibold text-white bg-black hover:bg-neutral-800 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-700">
                                         Sign In
                                     </button>
                                 </form>
