@@ -11,6 +11,7 @@ const userroute = require("./routes/user")
 const port = process.env.PORT || 3000
 const Visit = require('./models/visits');
 const NewPaper = require('./models/paper');
+const { injectSpeedInsights } = require("@vercel/speed-insights");
 
 //to count visits
 app.use(async (req, res, next) => {
